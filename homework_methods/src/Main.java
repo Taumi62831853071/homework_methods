@@ -7,15 +7,15 @@ public class Main {
             System.out.println(year + " год является високостным");
         } else System.out.println(year + " год не является високостным");
     }
-    public static void appVersion(int clientDeviceYear, boolean clientOS) {
+    public static void appVersion(int clientDeviceYear, byte clientOS) {
 
         int currentYear = LocalDate.now().getYear();
         if (clientDeviceYear < currentYear) {
-            if (clientOS == true) {
+            if (clientOS == 1) {
                 System.out.println("Установите версию облегченную приложения для Android по ссылке: ");
             } else System.out.println("Установите облегченную версию приложения для iOS по ссылке: ");
 
-        } else if (clientOS == true) {
+        } else if (clientOS == 1) {
             System.out.println("Установите версию приложения для Android по ссылке: ");
         } else System.out.println("Установите версию приложения для iOS по ссылке: ");
     }
@@ -32,7 +32,7 @@ public class Main {
         int year = 2021;
         isItALeapYear(year);
 
-        boolean clientOS = false;
+        byte clientOS = 0;
         int clientDeviceYear = 2020;
         appVersion(clientDeviceYear, clientOS);
 
